@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 90%;
+    max-width: 900px;
+    background-image: url(rose.jpg);
+    margin: auto;
+}
+header, footer, nav, aside, article, div{
+    border: 1px solid black;
+}
+header{
+    padding: 10px;
+}
+nav ul{
+    display: grid;
+    list-style: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 5px;
+}
+nav ul li{
+    text-align: center;
+    background-color: rgb(253, 247, 165);
+    padding: 5px;
+}
+nav ul li:hover{
+    background-color: rgb(226, 213, 155);
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-areas: 
+    "h h h"
+    "n n n"
+    "b a j"
+    "f f f"
+    ;
+    gap: 5px;
+    background-color: rgb(223, 107, 107);
+    padding: 10px;
+}
+article{
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "e m hr"
+    "e m hr"
+    "e m hr"
+    ;
+}
+article div{
+    margin: 5px;
+    padding: 5px;
+}
+img{
+    width:100%;
+}
+aside#bal{
+    grid-area: b;
+}
+aside#jobb{
+    grid-area: j;
+}
+nav{
+    grid-area: n;
+}
+header{
+    grid-area: h;
+}
+footer{
+    grid-area: f;
+}
+div#elso{
+    grid-area: e;
+}
+div#masodik{
+    grid-area: m;
+}
+div#harmadik{
+    grid-area: hr;
+}
+
+@media screen and (max-width: 850px) {
+    body{
+        width: 100%;
+    }
+    main{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+        "h h"
+        "n n"
+        "a b"
+        "j j"
+        "f f"
+        ;
+        gap: 5px;
+        padding:0;
+    }
+    article{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "e hr"
+        "e hr"
+        "e hr"
+        "m m"
+        "m m"
+        "m m"
+        ;
+    }
+}
+@media screen and (max-width: 450px) {
+    body{
+        width: 100%;
+    }
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "h"
+        "n"
+        "a"
+        "j"
+        "b"
+        "f"
+        ;
+        gap: 5px;
+        padding:0;
+    }
+    nav ul{
+        display: grid;
+        grid-template-columns:1fr;
+        gap: 0;
+    }
+    article{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "e"
+        "e"
+        "e"
+        "m"
+        "m"
+        "m"
+        "hr"
+        "hr"
+        "hr"
+        ;
+    }
+}
